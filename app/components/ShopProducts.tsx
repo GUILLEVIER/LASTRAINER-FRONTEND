@@ -46,7 +46,7 @@ export function ShopProducts() {
           {/* Indicadores */}
           <div className="flex justify-center gap-2 mt-3">
             {products.map((_, idx) => (
-              <span key={idx} className={`block w-2 h-2 rounded-full ${idx === current ? 'bg-primary' : 'bg-white'}`}/>
+              <span key={idx} className={`block w-2 h-2 rounded-full ${idx === current ? 'bg-primary' : "bg-black dark:bg-white"}`}/>
             ))}
           </div>
         </div>

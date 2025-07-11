@@ -71,7 +71,7 @@ export function GettingStarted() {
             <span
               key={idx}
               className={`block w-2 h-2 rounded-full ${
-                idx === current ? "bg-primary" : "bg-white"
+                idx === current ? "bg-primary" : "bg-black dark:bg-white"
               }`}
             />
           ))}

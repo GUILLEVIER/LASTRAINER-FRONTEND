@@ -1,29 +1,22 @@
 import { Link } from "react-router";
-import { useState, useEffect } from "react";
-import { logotipo_celeste_negro } from "~/assets";
+import { useState } from "react";
+import { logotipo_celeste_negro, logotipo_blanco_celeste } from "~/assets";
+import { useTheme } from "~/context/ThemeProvider";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
-
-  // Sincroniza el modo con el html
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [dark]);
+  const { dark, toggleTheme } = useTheme();
+  const logoURL = dark ? logotipo_celeste_negro : logotipo_blanco_celeste;
 
   return (
-    <nav className="bg-white fixed w-full z-30 top-0 left-0">
+    <nav className="dark:bg-white bg-black fixed w-full z-30 top-0 left-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center h-16 relative">
           {/* Logo centrado */}
           <div className="absolute left-0 flex items-center h-full">
             {/* Toggle modo claro/oscuro */}
             <button
-              onClick={() => setDark((prev) => !prev)}
+              onClick={toggleTheme}
               className="p-2 rounded-full transition"
               aria-label="Toggle dark mode"
             >
@@ -47,7 +40,7 @@ export function Navbar() {
                 // Icono luna (modo oscuro)
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-black"
+                  className="h-6 w-6 dark:text-black text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -64,18 +57,13 @@ export function Navbar() {
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Link to="/" className="flex items-center justify-center">
-              <img
-                src={logotipo_celeste_negro}
-                alt="lastrainer_logo"
-                className="w-auto"
-              />
+              <img src={logoURL} alt="lastrainer_logo" className="w-auto" />
             </Link>
           </div>
-          {/* Menú hamburguesa visible solo en < 2xl */}
-          <div className="absolute right-0 flex 2xl:hidden h-full items-center">
+          <div className="absolute right-0 flex h-full items-center">
             <button
               onClick={() => setOpen(!open)}
-              className="text-black hover:text-primary focus:outline-none"
+              className="dark:text-black text-white hover:text-primary focus:outline-none"
               aria-label="Abrir menú"
             >
               <svg
@@ -103,36 +91,20 @@ export function Navbar() {
               </svg>
             </button>
           </div>
-          {/* Menú horizontal visible solo en >= 2xl */}
-          <div className="hidden 2xl:flex space-x-4 absolute right-0 h-full items-center">
-            <Link
-              to="/"
-              className="text-black hover:text-primary"
-            >
-              SUMMER SALE
-            </Link>
-            <Link
-              to="/"
-              className="text-black hover:text-primary"
-            >
-              TRAINING PROGRAMS
-            </Link>
-          </div>
         </div>
       </div>
-      {/* Menú móvil */}
       {open && (
-        <div className="2xl:hidden px-2 pt-2 pb-3 space-y-1">
+        <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
             to="/"
-            className="block px-3 py-2 rounded-md text-black font-medium hover:text-primary"
+            className="block px-3 py-2 rounded-md text-white dark:text-black font-medium hover:text-primary"
             onClick={() => setOpen(false)}
           >
             SUMMER SALE
           </Link>
           <Link
             to="/"
-            className="block px-3 py-2 rounded-md text-black font-medium hover:text-primary"
+            className="block px-3 py-2 rounded-md text-white dark:text-black font-medium hover:text-primary"
             onClick={() => setOpen(false)}
           >
             TRAINING PROGRAMS

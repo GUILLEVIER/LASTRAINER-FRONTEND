@@ -36,7 +36,7 @@ export function TrainingPlans() {
 						onTouchStart={handleTouchStart}
 						onTouchEnd={handleTouchEnd}
 					>
-						<div className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden w-full h-80">
+						<div className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden w-full h-80 bg-black">
 							<img
 								src={plans[current].img}
 								alt={plans[current].name}
@@ -78,7 +78,7 @@ export function TrainingPlans() {
 							<span
 								key={idx}
 								className={`block w-2 h-2 rounded-full ${
-									idx === current ? 'bg-primary' : 'bg-white'
+									idx === current ? 'bg-primary' : "bg-black dark:bg-white"
 								}`}
 							/>
 						))}
@@ -89,7 +89,7 @@ export function TrainingPlans() {
 					{plans.map((plan, idx) => (
 						<div
 							key={idx}
-							className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden"
+							className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden bg-black cursor-pointer h-80"
 						>
 							<img
 								src={plan.img}

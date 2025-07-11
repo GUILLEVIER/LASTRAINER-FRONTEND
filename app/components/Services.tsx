@@ -53,7 +53,7 @@ export function Services() {
               <span
                 key={idx}
                 onClick={() => setCurrent(idx)}
-                className={`block w-3 h-3 rounded-full cursor-pointer ${idx === current ? 'bg-primary' : 'bg-white'}`}
+                className={`block w-3 h-3 rounded-full cursor-pointer ${idx === current ? 'bg-primary' : "bg-black dark:bg-white"}`}
               />
             ))}
           </div>
@@ -74,28 +74,32 @@ export function Services() {
               className="w-full h-full object-contain absolute inset-0 z-0"
             />
           )}
+
+
           {/* Flechas navegación */}
           <button
             onClick={() => setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1))}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black text-white rounded-full p-2 z-20"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-white dark:bg-black"
             aria-label="Anterior"
           >
-           <img src={arrow_back}/>
+            <img src={arrow_back} className='' />
           </button>
           <button
             onClick={() => setCurrent((prev) => (prev + 1) % length)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black text-white rounded-full p-2 z-20"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-white dark:bg-black"
             aria-label="Siguiente"
           >
-            <img src={arrow_forward}/>
+            <img src={arrow_forward} className='' />
           </button>
+
+
           {/* Puntos indicadores */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {serviceImages.map((_, idx) => (
               <span
                 key={idx}
                 onClick={() => setCurrent(idx)}
-                className={`block w-3 h-3 rounded-full cursor-pointer ${idx === current ? 'bg-primary' : 'bg-white'}`}
+                className={`block w-3 h-3 rounded-full cursor-pointer ${idx === current ? 'bg-primary' : "bg-black dark:bg-white"}`}
               />
             ))}
           </div>

@@ -9,9 +9,9 @@ export function BannerTitle({ children, className = "" }: BannerTitleProps) {
   return (
     <div className={`w-full flex justify-center my-8 ${className}`}>
       <h2
-        className="text-3xl md:text-4xl font-extrabold text-center text-primary px-4 py-2 rounded-lg bg-black shadow-lg animate-shake"
+        className="text-3xl md:text-4xl font-extrabold text-center text-primary px-4 py-2 rounded-lg bg-white shadow-lg animate-shake dark:bg-black"
         style={{
-          animation: "shake 2s cubic-bezier(.36,.07,.19,.97) infinite"
+          animation: "shake 4s cubic-bezier(.36,.07,.19,.97) infinite"
         }}
       >
         {children}
