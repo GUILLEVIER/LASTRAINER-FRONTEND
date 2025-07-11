@@ -55,12 +55,12 @@ export function Navbar() {
               )}
             </button>
           </div>
-          <div className="flex-1 flex justify-center items-center">
-            <Link to="/" className="flex items-center justify-center">
-              <img src={logoURL} alt="lastrainer_logo" className="w-auto" />
+          <div className="absolute center-0 flex justify-center items-center h-full">
+            <Link to="/" className="w-80">
+              <img src={logoURL} alt="lastrainer_logo" />
             </Link>
           </div>
-          <div className="absolute right-0 flex h-full items-center">
+          <div className="absolute right-0 flex items-center h-full ">
             <button
               onClick={() => setOpen(!open)}
               className="dark:text-black text-white hover:text-primary focus:outline-none"

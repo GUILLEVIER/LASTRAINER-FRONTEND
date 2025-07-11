@@ -36,7 +36,7 @@ export function TrainingPlans() {
 						onTouchStart={handleTouchStart}
 						onTouchEnd={handleTouchEnd}
 					>
-						<div className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden w-full h-80 bg-black">
+						<div className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden w-full h-80 bg-secondary dark:bg-secondary/60">
 							<img
 								src={plans[current].img}
 								alt={plans[current].name}
@@ -50,11 +50,10 @@ export function TrainingPlans() {
 									{[...Array(5)].map((_, i) => (
 										<svg
 											key={i}
-											className={`w-5 h-5 ${
-												i < plans[current].stars
-													? 'text-primary'
-													: 'text-white'
-											}`}
+											className={`w-5 h-5 ${i < plans[current].stars
+												? 'text-primary'
+												: 'text-white'
+												}`}
 											fill="currentColor"
 											viewBox="0 0 20 20"
 										>
@@ -77,9 +76,8 @@ export function TrainingPlans() {
 						{plans.map((_, idx) => (
 							<span
 								key={idx}
-								className={`block w-2 h-2 rounded-full ${
-									idx === current ? 'bg-primary' : "bg-black dark:bg-white"
-								}`}
+								className={`block w-2 h-2 rounded-full ${idx === current ? 'bg-primary' : "bg-black dark:bg-white"
+									}`}
 							/>
 						))}
 					</div>
@@ -89,7 +87,7 @@ export function TrainingPlans() {
 					{plans.map((plan, idx) => (
 						<div
 							key={idx}
-							className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden bg-black cursor-pointer h-80"
+							className="rounded-2xl shadow-lg flex flex-col items-center overflow-hidden bg-secondary dark:bg-secondary/60 h-80"
 						>
 							<img
 								src={plan.img}
@@ -104,11 +102,10 @@ export function TrainingPlans() {
 									{[...Array(5)].map((_, i) => (
 										<svg
 											key={i}
-											className={`w-5 h-5 ${
-												i < plan.stars
-													? 'text-primary'
-													: 'text-white'
-											}`}
+											className={`w-5 h-5 ${i < plan.stars
+												? 'text-primary'
+												: 'text-white'
+												}`}
 											fill="currentColor"
 											viewBox="0 0 20 20"
 										>

@@ -4,6 +4,10 @@
   --font-oswald: "Oswald", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-primary: #1EE2E2;
+  --color-secondary: #F9465B;
+  --color-secondary/60: #F9465B;
+  --color-tertiary: #F48445;
+  --color-tertiary/60: #F48445;
   --color-black: #000;
   --color-white: #fff;
 }
@@ -14,12 +18,17 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  html, body {
+
+  html,
+  body {
     color-scheme: dark;
   }
 }
+
 @media (prefers-color-scheme: light) {
-  html, body {
+
+  html,
+  body {
     color-scheme: light;
   }
 }
