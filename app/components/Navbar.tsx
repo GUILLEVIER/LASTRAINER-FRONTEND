@@ -64,37 +64,55 @@ export function Navbar() {
               />
             </Link>
           </div>
-          <div className='absolute right-0 flex items-center h-full '>
+            <div className='absolute right-0 flex items-center h-full '>
             <button
               onClick={() => setOpen(!open)}
               className='dark:text-black text-white hover:text-primary focus:outline-none'
               aria-label='Abrir menú'
             >
               <svg
-                className='h-6 w-6'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
+              className='h-6 w-6'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'
               >
-                {open ? (
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M6 18L18 6M6 6l12 12'
-                  />
-                ) : (
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 6h16M4 12h16M4 18h16'
-                  />
-                )}
+              {open ? (
+                <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M6 18L18 6M6 6l12 12'
+                />
+              ) : (
+                <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M4 6h16M4 12h16M4 18h16'
+                />
+              )}
               </svg>
             </button>
-          </div>
+            {/* Icono de carrito de compras */}
+            <Link to='/cart' className='ml-4'>
+              <svg
+              className='h-6 w-6 dark:text-black text-white hover:text-primary transition'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'
+              aria-label='Carrito de compras'
+              >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m1-13a1 1 0 11-2 0 1 1 0 012 0z'
+              />
+              </svg>
+            </Link>
+            </div>
         </div>
       </div>
       {open && (

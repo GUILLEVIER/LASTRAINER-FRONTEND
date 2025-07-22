@@ -3,7 +3,7 @@ import { ParallaxWrapper } from './ParallaxWrapper';
 import { lastrainer_1 } from "../../assets";
 
 /**
- * Carousel de fondo fijo con efecto parallax
+ * Imagen de fondo fijo con efecto parallax
  * Overlay semi-transparente para mejorar legibilidad
  * Posicionamiento absoluto y z-index negativo
  */

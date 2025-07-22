@@ -3,7 +3,7 @@ import { plans } from '~/data/plans'
 import { ImageWithBlurredBackground } from './images/ImageWithBlurredBackground'
 import { useCarousel } from '~/utils/swipeUtils'
 
-export function TrainingPlans() {
+export function TrainingOnlinePlans() {
   const { current, swipeHandlers } = useCarousel(plans.length)
 
   return (
@@ -47,7 +47,7 @@ export function TrainingPlans() {
                 </div>
                 <div className='flex-1' />
                 <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
-                  MORE INFO
+                  MÁS INFORMACIÓN
                 </button>
               </div>
             </div>
@@ -102,7 +102,7 @@ export function TrainingPlans() {
                 </div>
                 <div className='flex-1' />
                 <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
-                  MORE INFO
+                  MÁS INFORMACIÓN
                 </button>
               </div>
             </div>
@@ -111,7 +111,7 @@ export function TrainingPlans() {
       </section>
       <div className='w-full flex justify-center mt-8 mb-8'>
         <button className='px-8 py-3 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
-          MORE PLANS
+          MÁS PROGRAMAS
         </button>
       </div>
     </div>

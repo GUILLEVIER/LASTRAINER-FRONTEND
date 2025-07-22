@@ -49,7 +49,7 @@ export function ShopProducts() {
                   {products[current].price}
                 </p>
                 <button className='mt-2 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition'>
-                  ADD CART
+                  AGREGAR AL CARRITO
                 </button>
               </div>
             </div>
@@ -86,7 +86,7 @@ export function ShopProducts() {
                   {product.price}
                 </p>
                 <button className='mt-2 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition'>
-                  ADD CART
+                  AGREGAR AL CARRITO
                 </button>
               </div>
             </div>
@@ -95,7 +95,7 @@ export function ShopProducts() {
       </section>
       <div className='w-full flex justify-center mt-8 mb-8'>
         <button className='px-8 py-3 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition'>
-          MORE PRODUCTS
+          MÁS PRODUCTOS
         </button>
       </div>
     </div>

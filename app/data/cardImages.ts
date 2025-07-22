@@ -2,7 +2,7 @@ import { lastrainer_1, lastrainer_11, lastrainer_13, lastrainer_5 } from "~/asse
 
 export const cardImages = [
   {
-    title: "PROGRAMAS DE ENTRENAMIENTO",
+    title: "PROGRAMAS ONLINE",
     img: lastrainer_1,
   },
   {

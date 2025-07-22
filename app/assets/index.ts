@@ -14,11 +14,6 @@ import lastrainer_13 from './images/lastrainer_13.jpg'
 import lastrainer_14 from './images/lastrainer_14.jpg'
 import lastrainer_15 from './images/lastrainer_15.jpg'
 import lastrainer_16 from './images/lastrainer_16.jpg'
-import crossfit from './images/crossfit.png'
-import fitness from './images/fitness.png'
-import nutricion from './images/nutricion.png'
-import personal from './images/personal.png'
-import masoterapia from './images/masoterapia.png'
 
 import imagotipo_blanco_celeste_blanco from './logos/imagotipo-blanco-celeste-blanco.png'
 import imagotipo_blanco_celeste_celeste from './logos/imagotipo-blanco-celeste-celeste.png'
@@ -63,11 +58,6 @@ export {
   logotipo_celeste_blanco,
   logotipo_celeste_negro,
   logotipo_negro_celeste,
-  crossfit,
-  fitness,
-  nutricion,
-  personal,
-  masoterapia,
   arrow_back,
   arrow_forward
 }
