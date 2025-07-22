@@ -2,19 +2,19 @@ import { lastrainer_1, lastrainer_11, lastrainer_13, lastrainer_5 } from "~/asse
 
 export const cardImages = [
   {
-    title: "TRAINING PROGRAMS",
+    title: "PROGRAMAS DE ENTRENAMIENTO",
     img: lastrainer_1,
   },
   {
-    title: "MEDIA",
+    title: "PROGRAMAS PRESENCIALES",
     img: lastrainer_5,
   },
   {
-    title: "TRAINING CONTENT",
+    title: "CLASE GRATUITA",
     img: lastrainer_13,
   },
   {
-    title: "VIDEO CONTENT",
+    title: "VENTA DE PRODUCTOS",
     img: lastrainer_11,
   },
 ];
