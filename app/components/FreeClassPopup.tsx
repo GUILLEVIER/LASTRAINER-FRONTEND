@@ -48,7 +48,7 @@ export function FreeClassPopup({ isOpen, onClose }: FreeClassPopupProps) {
         </button>
         
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-          ¡Solicita tu Clase Gratis!
+          ¡SOLICITA TU CLASE GRATIS!
         </h2>
         
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -104,7 +104,7 @@ export function FreeClassPopup({ isOpen, onClose }: FreeClassPopupProps) {
             type="submit"
             className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-3 px-4 rounded-md hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
-            Solicitar Clase Gratis
+            SOLICITAR
           </button>
         </form>
       </div>

@@ -66,7 +66,7 @@ export function FaceToFaceTrainingPlans() {
                   </span>
                 </div>
                     <div className='flex-1' />
-                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300'>
                   MÁS INFORMACIÓN
                 </button>
                   </div>
@@ -121,7 +121,7 @@ export function FaceToFaceTrainingPlans() {
                   </span>
                 </div>
                 <div className='flex-1' />
-                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300'>
                   MÁS INFORMACIÓN
                 </button>
                   </div>
@@ -130,7 +130,7 @@ export function FaceToFaceTrainingPlans() {
             </div>
           </section>
               <div className='w-full flex justify-center mt-8 mb-8'>
-        <button className='px-8 py-3 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+        <button className='px-8 py-3 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300'>
           MÁS PROGRAMAS
         </button>
       </div>

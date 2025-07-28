@@ -71,7 +71,7 @@ export function ShopProducts() {
           {products.map((product, idx) => (
             <div
               key={idx}
-              className='relative rounded-xl overflow-hidden shadow-lg h-80 flex flex-col items-end group cursor-pointer bg-secondary dark:bg-secondary/60'
+              className='rounded-2xl shadow-lg flex flex-col items-center overflow-hidden bg-secondary dark:bg-secondary-60 h-80 transform transition-transform duration-300 hover:scale-105'
             >
               <ImageWithBlurredBackground
                 src={product.img}

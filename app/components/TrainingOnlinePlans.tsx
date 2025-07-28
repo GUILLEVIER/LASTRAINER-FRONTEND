@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { plans } from '~/data/plans'
 import { ImageWithBlurredBackground } from './images/ImageWithBlurredBackground'
-import { useCarousel } from '~/utils/swipeUtils'
 
 export function TrainingOnlinePlans() {
-  const { current, swipeHandlers } = useCarousel(plans.length)
+  const [current, setCurrent] = useState(0)
+  const touchStartX = useRef<number | null>(null)
+
+  // REMOVER Y COLOCAR EN UTILS
+  // Swipe handlers
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  // REMOVER Y COLOCAR EN UTILS
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null) return
+    const touchEndX = e.changedTouches[0].clientX
+    const diff = touchEndX - touchStartX.current
+    if (diff > 50) {
+      setCurrent((prev) => (prev === 0 ? plans.length - 1 : prev - 1))
+    } else if (diff < -50) {
+      setCurrent((prev) => (prev === plans.length - 1 ? 0 : prev + 1))
+    }
+    touchStartX.current = null
+  }
 
   return (
     <div>
@@ -13,7 +32,8 @@ export function TrainingOnlinePlans() {
         <div className='block sm:hidden relative'>
           <div
             className='flex justify-center items-end h-80'
-            {...swipeHandlers}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             <div className='rounded-2xl shadow-lg flex flex-col items-center overflow-hidden w-full h-80 bg-secondary dark:bg-secondary-60'>
               <ImageWithBlurredBackground
@@ -46,7 +66,7 @@ export function TrainingOnlinePlans() {
                   </span>
                 </div>
                 <div className='flex-1' />
-                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300'>
                   MÁS INFORMACIÓN
                 </button>
               </div>
@@ -65,7 +85,7 @@ export function TrainingOnlinePlans() {
           </div>
         </div>
         {/* Grid en pantallas mayores */}
-        <div className='hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-8'>
           {plans.map((plan, idx) => (
             <div
               key={idx}
@@ -101,7 +121,7 @@ export function TrainingOnlinePlans() {
                   </span>
                 </div>
                 <div className='flex-1' />
-                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+                <button className='mt-4 px-6 py-2 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300'>
                   MÁS INFORMACIÓN
                 </button>
               </div>
@@ -110,7 +130,7 @@ export function TrainingOnlinePlans() {
         </div>
       </section>
       <div className='w-full flex justify-center mt-8 mb-8'>
-        <button className='px-8 py-3 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'>
+        <button className='px-8 py-3 bg-black text-white font-semibold rounded-full shadow border border-white hover:bg-primary transition-colors duration-300'>
           MÁS PROGRAMAS
         </button>
       </div>

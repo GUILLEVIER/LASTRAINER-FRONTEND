@@ -119,14 +119,14 @@ export function Moments() {
             onClick={() =>
               setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1))
             }
-            className='absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-white dark:bg-black'
+            className='absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-transparent dark:bg-transparent'
             aria-label='Anterior'
           >
             <img src={arrow_back} className='' />
           </button>
           <button
             onClick={() => setCurrent((prev) => (prev + 1) % length)}
-            className='absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-white dark:bg-black'
+            className='absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-transparent dark:bg-transparent'
             aria-label='Siguiente'
           >
             <img src={arrow_forward} className='' />

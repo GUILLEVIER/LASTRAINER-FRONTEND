@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { carouselImages, type CarouselImage } from '../data/carouselImages'
+import { imagotipo_blanco_celeste_blanco, logotipo_negro_celeste, imagotipo_blanco_celeste_celeste } from '../assets'
 
 export function Carousel() {
   const [current, setCurrent] = useState(0)
@@ -31,24 +32,35 @@ export function Carousel() {
       onMouseLeave={handleMouseLeave}
     >
       {carouselImages.map((img, idx) => (
-        <div
-          key={img.src}
+        <picture
+          key={idx}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out
             ${idx === current ? 'opacity-100' : 'opacity-0'}
           `}
         >
+          <source
+            srcSet={imagotipo_blanco_celeste_celeste}
+            media='(width >= 640px) and (width < 768px)'
+          />
+          <source
+            srcSet={imagotipo_blanco_celeste_blanco}
+            media="(width >= 768px) and (width < 1024px)" />
+          <source
+            srcSet={logotipo_negro_celeste}
+            media="(width >= 1024px)"
+          />
+          {/* Imagen en Mobile */}
           <img
             src={img.src}
             alt={img.alt}
             className='w-full h-full object-cover'
             loading={idx === 0 ? 'eager' : 'lazy'}
           />
-
           {/* Overlay con gradiente mejorado */}
           <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50' />
 
           {/* Contenido del texto */}
-          <div className='absolute inset-0 flex flex-col justify-center items-center text-center text-white px-8 md:px-16 animate-fade-in'>
+          <div className='absolute inset-0 flex flex-col justify-end items-center text-center text-white px-8 md:px-16 animate-fade-in'>
             <h2 className='text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 drop-shadow-lg max-w-4xl leading-tight'>
               {img.title}
             </h2>
@@ -56,11 +68,12 @@ export function Carousel() {
               {img.description}
             </p>
           </div>
-        </div>
+        </picture>
       ))}
 
       {/* Indicadores de posición mejorados */}
-      <div className='absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3'>
+
+      {/* <div className='absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3'>
         {carouselImages.map((_, idx) => (
           <button
             key={idx}
@@ -73,10 +86,10 @@ export function Carousel() {
             aria-label={`Ir a la imagen ${idx + 1}`}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Botones de navegación para desktop */}
-      <div className='hidden md:flex absolute inset-y-0 left-0 items-center'>
+      {/* <div className='hidden md:flex absolute inset-y-0 left-0 items-center'>
         <button
           onClick={() =>
             setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1))
@@ -98,9 +111,9 @@ export function Carousel() {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
 
-      <div className='hidden md:flex absolute inset-y-0 right-0 items-center'>
+      {/* <div className='hidden md:flex absolute inset-y-0 right-0 items-center'>
         <button
           onClick={goToNext}
           className='mr-4 p-2 bg-black/30 text-white rounded-full hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary'
@@ -120,7 +133,7 @@ export function Carousel() {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }

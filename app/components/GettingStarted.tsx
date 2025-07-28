@@ -83,7 +83,7 @@ export function GettingStarted() {
         {cardImages.map((card, idx) => (
           <div
             key={card.title}
-            className='relative rounded-xl overflow-hidden shadow-lg h-64 flex items-end group cursor-pointer'
+            className='relative rounded-xl overflow-hidden shadow-lg h-64 flex items-end group cursor-pointer transform transition-transform duration-300 hover:scale-105'
             style={{
               backgroundImage: `url(${card.img})`,
               backgroundSize: 'contain',
