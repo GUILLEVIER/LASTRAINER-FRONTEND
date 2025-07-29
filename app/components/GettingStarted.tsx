@@ -6,12 +6,7 @@ export function GettingStarted() {
   const touchStartX = useRef<number | null>(null)
 
   // IDs de las secciones a las que se hará scroll
-  const sectionIds = [
-    'training-programs',
-    'media',
-    'training-content',
-    'video-content',
-  ]
+  const sectionIds = ['training-programs', 'media', 'training-content', 'video-content']
 
   // REMOVER Y COLOCAR EN UTILS
   // Funciones para swipe
@@ -26,10 +21,10 @@ export function GettingStarted() {
     const diff = touchEndX - touchStartX.current
     if (diff > 50) {
       // Swipe derecha
-      setCurrent((prev) => (prev === 0 ? cardImages.length - 1 : prev - 1))
+      setCurrent(prev => (prev === 0 ? cardImages.length - 1 : prev - 1))
     } else if (diff < -50) {
       // Swipe izquierda
-      setCurrent((prev) => (prev === cardImages.length - 1 ? 0 : prev + 1))
+      setCurrent(prev => (prev === cardImages.length - 1 ? 0 : prev + 1))
     }
     touchStartX.current = null
   }
@@ -43,16 +38,16 @@ export function GettingStarted() {
   }
 
   return (
-    <section className='w-full max-w-7xl mx-auto py-8 px-4'>
+    <section className="w-full max-w-7xl mx-auto py-8 px-4">
       {/* Carrusel solo en mobile */}
-      <div className='block sm:hidden relative'>
+      <div className="block sm:hidden relative">
         <div
-          className='flex justify-center items-end h-64'
+          className="flex justify-center items-end h-64"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           <div
-            className='relative rounded-xl overflow-hidden shadow-lg h-64 w-full flex items-end group cursor-pointer'
+            className="relative rounded-xl overflow-hidden shadow-lg h-64 w-full flex items-end group cursor-pointer"
             style={{
               backgroundImage: `url(${cardImages[current].img})`,
               backgroundSize: 'contain',
@@ -61,13 +56,13 @@ export function GettingStarted() {
             }}
             onClick={() => handleCardClick(current)}
           >
-            <h3 className='relative w-full text-center text-white text-xl font-bold pb-6 z-10'>
+            <h3 className="relative w-full text-center text-white text-xl font-bold pb-6 z-10">
               {cardImages[current].title}
             </h3>
           </div>
         </div>
         {/* Indicadores */}
-        <div className='flex justify-center gap-2 mt-3'>
+        <div className="flex justify-center gap-2 mt-3">
           {cardImages.map((_, idx) => (
             <span
               key={idx}
@@ -79,11 +74,11 @@ export function GettingStarted() {
         </div>
       </div>
       {/* Grid en pantallas mayores */}
-      <div className='hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6'>
+      <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-6">
         {cardImages.map((card, idx) => (
           <div
             key={card.title}
-            className='relative rounded-xl overflow-hidden shadow-lg h-64 flex items-end group cursor-pointer transform transition-transform duration-300 hover:scale-105'
+            className="relative rounded-xl overflow-hidden shadow-lg h-64 flex items-end group cursor-pointer transform transition-transform duration-300 hover:scale-105"
             style={{
               backgroundImage: `url(${card.img})`,
               backgroundSize: 'contain',
@@ -92,7 +87,7 @@ export function GettingStarted() {
             }}
             onClick={() => handleCardClick(idx)}
           >
-            <h3 className='relative w-full text-center text-white text-xl font-bold pb-6 z-10'>
+            <h3 className="relative w-full text-center text-white text-xl font-bold pb-6 z-10">
               {card.title}
             </h3>
           </div>

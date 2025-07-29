@@ -1,21 +1,21 @@
-import { lastrainer_14, lastrainer_15, lastrainer_16 } from "~/assets";
+import { lastrainer_5_program, lastrainer_6_program, lastrainer_7_program } from "~/assets";
 
 export const plans = [
   {
     name: 'BEGINNER STRENGTH',
-    img: lastrainer_14,
+    img: lastrainer_5_program,
     stars: 3,
     reviews: 141,
   },
   {
     name: 'ADVANCED POWER',
-    img: lastrainer_15,
+    img: lastrainer_6_program,
     stars: 5,
     reviews: 98,
   },
   {
     name: 'WEIGHT LOSS PRO',
-    img: lastrainer_16,
+    img: lastrainer_7_program,
     stars: 4,
     reviews: 203,
   },

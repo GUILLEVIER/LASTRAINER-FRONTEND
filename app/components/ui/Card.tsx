@@ -18,8 +18,7 @@ export function Card({
   const variantClasses = {
     default: 'bg-white dark:bg-gray-800',
     elevated: 'bg-white dark:bg-gray-800 shadow-lg',
-    outlined:
-      'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
+    outlined: 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
   }
 
   const hoverClasses = hoverable

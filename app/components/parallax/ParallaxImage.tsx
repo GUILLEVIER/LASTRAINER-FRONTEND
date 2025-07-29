@@ -1,6 +1,5 @@
-import React from 'react';
-import { ParallaxWrapper } from './ParallaxWrapper';
-import { lastrainer_1 } from "../../assets";
+import { ParallaxWrapper } from './ParallaxWrapper'
+import { lastrainer_1 } from '../../assets'
 
 /**
  * Imagen de fondo fijo con efecto parallax
@@ -21,5 +20,5 @@ export function ParallaxImage() {
       </ParallaxWrapper>
       <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
     </div>
-  );
+  )
 }

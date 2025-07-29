@@ -26,21 +26,21 @@ export function Moments() {
     const touchEndX = e.changedTouches[0].clientX
     const diff = touchEndX - touchStartX.current
     if (diff > 50) {
-      setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1))
+      setCurrent(prev => (prev === 0 ? length - 1 : prev - 1))
     } else if (diff < -50) {
-      setCurrent((prev) => (prev + 1) % length)
+      setCurrent(prev => (prev + 1) % length)
     }
     touchStartX.current = null
   }
 
-  const renderContent = (item: typeof momentImagesAndVideos[0]) => {
+  const renderContent = (item: (typeof momentImagesAndVideos)[0]) => {
     switch (item.type) {
       case 'image':
         return (
           <img
             src={item.src}
             alt={item.title}
-            className='w-full h-full object-contain absolute inset-0 z-0'
+            className="w-full h-full object-contain absolute inset-0 z-0"
           />
         )
       case 'video':
@@ -48,37 +48,37 @@ export function Moments() {
           <video
             src={item.src}
             controls
-            className='w-full h-full object-contain absolute inset-0 z-0'
+            className="w-full h-full object-contain absolute inset-0 z-0"
             playsInline
             preload="none"
           />
         )
       case 'instagram':
         return (
-          <div className='w-full h-full flex items-center justify-center absolute inset-0 z-0'>
+          <div className="w-full h-full flex items-center justify-center absolute inset-0 z-0">
             <iframe
               src={item.embedUrl}
-              width='400'
-              height='600'
-              frameBorder='0'
-              scrolling='no'
+              width="400"
+              height="600"
+              frameBorder="0"
+              scrolling="no"
               allowTransparency={true}
-              className='max-w-full max-h-full'
+              className="max-w-full max-h-full"
             />
           </div>
         )
-        case 'youtube':
+      case 'youtube':
         return (
-          <div className='w-full h-full flex items-center justify-center absolute inset-0 z-0'>
+          <div className="w-full h-full flex items-center justify-center absolute inset-0 z-0">
             <iframe
               src={item.embedUrl}
-              width='100%'
-              height='100%'
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              referrerPolicy='strict-origin-when-cross-origin'
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className='w-full h-full max-w-full max-h-full rounded-lg'
+              className="w-full h-full max-w-full max-h-full rounded-lg"
             />
           </div>
         )
@@ -88,16 +88,16 @@ export function Moments() {
   }
 
   return (
-    <section className='w-full max-w-3xl mx-auto py-10 px-4 h-[800px]'>
-      <div className='block sm:hidden relative h-full'>
+    <section className="w-full max-w-3xl mx-auto py-10 px-4 h-[800px]">
+      <div className="block sm:hidden relative h-full">
         <div
-          className='relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center'
+          className="relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           {renderContent(momentImagesAndVideos[current])}
           {/* Puntos indicadores */}
-          <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20'>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {momentImagesAndVideos.map((_, idx) => (
               <span
                 key={idx}
@@ -110,30 +110,28 @@ export function Moments() {
           </div>
         </div>
       </div>
-      <div className='hidden sm:block h-full'>
-        <div className='relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center'>
+      <div className="hidden sm:block h-full">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full flex items-center justify-center">
           {renderContent(momentImagesAndVideos[current])}
 
           {/* Flechas navegación */}
           <button
-            onClick={() =>
-              setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1))
-            }
-            className='absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-transparent dark:bg-transparent'
-            aria-label='Anterior'
+            onClick={() => setCurrent(prev => (prev === 0 ? length - 1 : prev - 1))}
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-transparent dark:bg-transparent"
+            aria-label="Anterior"
           >
-            <img src={arrow_back} className='' />
+            <img src={arrow_back} className="" />
           </button>
           <button
-            onClick={() => setCurrent((prev) => (prev + 1) % length)}
-            className='absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-transparent dark:bg-transparent'
-            aria-label='Siguiente'
+            onClick={() => setCurrent(prev => (prev + 1) % length)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-2 z-20 bg-transparent dark:bg-transparent"
+            aria-label="Siguiente"
           >
-            <img src={arrow_forward} className='' />
+            <img src={arrow_forward} className="" />
           </button>
 
           {/* Puntos indicadores */}
-          <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20'>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {momentImagesAndVideos.map((_, idx) => (
               <span
                 key={idx}

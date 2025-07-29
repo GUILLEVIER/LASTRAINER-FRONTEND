@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { carouselImages, type CarouselImage } from '../data/carouselImages'
-import { imagotipo_blanco_celeste_blanco, logotipo_negro_celeste, imagotipo_blanco_celeste_celeste } from '../assets'
+import { carouselImages } from '../data/carouselImages'
 
 export function Carousel() {
   const [current, setCurrent] = useState(0)
@@ -8,7 +7,7 @@ export function Carousel() {
   const length = carouselImages.length
 
   const goToNext = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % length)
+    setCurrent(prev => (prev + 1) % length)
   }, [length])
 
   const goToSlide = useCallback((index: number) => {
@@ -27,7 +26,7 @@ export function Carousel() {
 
   return (
     <div
-      className='relative w-full h-[60vh] max-h-[600px] min-h-[400px] overflow-hidden'
+      className="relative w-full h-[60vh] max-h-[600px] min-h-[400px] overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -38,33 +37,32 @@ export function Carousel() {
             ${idx === current ? 'opacity-100' : 'opacity-0'}
           `}
         >
+          {/* Optimización de imágenes por dispositivo */}
+          <source srcSet={img.srcSet['1024w']} media="(min-width: 1024px)" type="image/jpeg" />
           <source
-            srcSet={imagotipo_blanco_celeste_celeste}
-            media='(width >= 640px) and (width < 768px)'
+            srcSet={img.srcSet['768w']}
+            media="(min-width: 768px) and (max-width: 1023px)"
+            type="image/jpeg"
           />
-          <source
-            srcSet={imagotipo_blanco_celeste_blanco}
-            media="(width >= 768px) and (width < 1024px)" />
-          <source
-            srcSet={logotipo_negro_celeste}
-            media="(width >= 1024px)"
-          />
-          {/* Imagen en Mobile */}
+          <source srcSet={img.srcSet['640w']} media="(max-width: 767px)" type="image/jpeg" />
+          {/* Fallback optimizado para móviles */}
           <img
-            src={img.src}
+            src={img.srcSet['640w']}
             alt={img.alt}
-            className='w-full h-full object-cover'
+            className="w-full h-full object-cover object-center"
             loading={idx === 0 ? 'eager' : 'lazy'}
+            decoding={idx === 0 ? 'sync' : 'async'}
+            sizes="(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 100vw"
           />
           {/* Overlay con gradiente mejorado */}
-          <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50' />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50" />
 
           {/* Contenido del texto */}
-          <div className='absolute inset-0 flex flex-col justify-end items-center text-center text-white px-8 md:px-16 animate-fade-in'>
-            <h2 className='text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 drop-shadow-lg max-w-4xl leading-tight'>
+          <div className="absolute inset-0 flex flex-col justify-end items-center text-center text-white px-8 md:px-16 animate-fade-in">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 drop-shadow-lg max-w-4xl leading-tight">
               {img.title}
             </h2>
-            <p className='text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed drop-shadow-md opacity-90'>
+            <p className="text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed drop-shadow-md opacity-90">
               {img.description}
             </p>
           </div>

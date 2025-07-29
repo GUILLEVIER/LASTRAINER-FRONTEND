@@ -21,11 +21,9 @@ export function Button({
     'font-semibold rounded-full shadow border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
 
   const variantClasses = {
-    primary:
-      'bg-black text-white border-white hover:bg-primary hover:border-primary',
+    primary: 'bg-black text-white border-white hover:bg-primary hover:border-primary',
     secondary: 'bg-secondary text-white border-secondary hover:bg-secondary-60',
-    outline:
-      'bg-transparent text-primary border-primary hover:bg-primary hover:text-white',
+    outline: 'bg-transparent text-primary border-primary hover:bg-primary hover:text-white',
     ghost:
       'bg-transparent text-current border-transparent hover:bg-black/10 dark:hover:bg-white/10',
   }
@@ -41,8 +39,8 @@ export function Button({
   return (
     <button className={classes} disabled={disabled || loading} {...props}>
       {loading ? (
-        <div className='flex items-center space-x-2'>
-          <div className='w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin' />
+        <div className="flex items-center space-x-2">
+          <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
           <span>Cargando...</span>
         </div>
       ) : (

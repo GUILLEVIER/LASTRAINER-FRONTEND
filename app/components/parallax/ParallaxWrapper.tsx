@@ -1,10 +1,10 @@
-import React from 'react';
-import { useParallax } from '~/hooks/useParallax';
+import React from 'react'
+import { useParallax } from '~/hooks/useParallax'
 
 interface ParallaxWrapperProps {
-  children: React.ReactNode;
-  speed?: number;
-  className?: string;
+  children: React.ReactNode
+  speed?: number
+  className?: string
 }
 
 /**
@@ -12,15 +12,11 @@ interface ParallaxWrapperProps {
  * Velocidad configurable
  * Usa transformaciones CSS para mejor rendimiento
  */
-export function ParallaxWrapper({
-  children, 
-  speed = 0.5, 
-  className = '' 
-}: ParallaxWrapperProps) {
-  const scrollY = useParallax();
-  console.log("ParallaxWrapper scrollY:", scrollY);
-  const transform = `translateY(${scrollY * speed}px)`;
-  console.log("ParallaxWrapper transform:", transform);
+export function ParallaxWrapper({ children, speed = 0.5, className = '' }: ParallaxWrapperProps) {
+  const scrollY = useParallax()
+  console.log('ParallaxWrapper scrollY:', scrollY)
+  const transform = `translateY(${scrollY * speed}px)`
+  console.log('ParallaxWrapper transform:', transform)
 
   return (
     <div
@@ -31,5 +27,5 @@ export function ParallaxWrapper({
     >
       {children}
     </div>
-  );
+  )
 }

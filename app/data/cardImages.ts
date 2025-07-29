@@ -1,4 +1,4 @@
-import { lastrainer_1, lastrainer_11, lastrainer_13, lastrainer_5 } from "~/assets";
+import { lastrainer_1, lastrainer_2, lastrainer_3, lastrainer_4 } from "~/assets";
 
 export const cardImages = [
   {
@@ -7,14 +7,14 @@ export const cardImages = [
   },
   {
     title: "PROGRAMAS PRESENCIALES",
-    img: lastrainer_5,
+    img: lastrainer_2,
   },
   {
     title: "CLASE GRATUITA",
-    img: lastrainer_13,
+    img: lastrainer_3,
   },
   {
     title: "VENTA DE PRODUCTOS",
-    img: lastrainer_11,
+    img: lastrainer_4,
   },
 ];

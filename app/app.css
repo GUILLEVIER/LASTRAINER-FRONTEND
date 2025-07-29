@@ -1,16 +1,19 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --color-primary: #1EE2E2;
-  --color-secondary: #F9465B;
+  --color-primary: #1fe3e3;
+  --color-secondary: #f74759;
   --color-secondary-60: rgba(249, 70, 91, 0.6);
-  --color-tertiary: #F48445;
+  --color-tertiary: #f28545;
   --color-tertiary-60: rgba(244, 132, 69, 0.6);
+  --color-quaternary: #0a5e6b;
+  --color-white: #fffdfe;
+  --color-black: #0f0f12;
 
-  --font-oswald: "Oswald", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-oswald: 'Oswald', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  --animate-shake: shake 2s cubic-bezier(.36, .07, .19, .97) infinite;
+  --animate-shake: shake 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   --animate-fade-in: fadeIn 0.6s ease-out;
   --animate-slide-in-left: slideInLeft 0.8s ease-out;
   --animate-slide-in-right: slideInRight 0.8s ease-out;
@@ -80,7 +83,6 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-
   html,
   body {
     color-scheme: dark;
@@ -88,7 +90,6 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-
   html,
   body {
     color-scheme: light;
@@ -97,7 +98,6 @@ body {
 
 /* Animaciones personalizadas */
 @keyframes shake {
-
   0%,
   100% {
     transform: translateX(0);

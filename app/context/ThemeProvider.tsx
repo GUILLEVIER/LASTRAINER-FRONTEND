@@ -14,7 +14,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [dark, setIsDark] = useState<boolean>(false)
 
   const toggleTheme = () => {
-    setIsDark((prev) => {
+    setIsDark(prev => {
       const newValue = !prev
       // Persistir en localStorage
       if (typeof window !== 'undefined') {
@@ -34,7 +34,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
       console.log('Media Query:', mediaQuery)
-      mediaQuery.addEventListener('change', (e) => {
+      mediaQuery.addEventListener('change', e => {
         console.log('Dark mode preference changed:', e.matches)
         setIsDark(e.matches)
       })
@@ -42,11 +42,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  return (
-    <ThemeContext.Provider value={{ dark, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ dark, toggleTheme }}>{children}</ThemeContext.Provider>
 }
 
 export function useTheme() {

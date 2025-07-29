@@ -22,33 +22,33 @@ export function Welcome() {
         <Carousel />
       </div>
       <div>
-        <BannerTitle className='mb-8'>BIENVENIDA</BannerTitle>
+        <BannerTitle className="mb-8">BIENVENIDA</BannerTitle>
         <GettingStarted />
       </div>
       <div>
-        <BannerTitle className='mb-8'>¡CONÓCENOS!</BannerTitle>
+        <BannerTitle className="mb-8">¡CONÓCENOS!</BannerTitle>
         <TrainingPlansQuiz />
       </div>
       <div>
-        <BannerTitle className='mb-8'>PROGRAMAS ONLINE RECOMENDADOS</BannerTitle>
+        <BannerTitle className="mb-8">PROGRAMAS ONLINE RECOMENDADOS</BannerTitle>
         <TrainingOnlinePlans />
       </div>
       <div>
-        <BannerTitle className='mb-8'>PROGRAMAS PRESENCIALES RECOMENDADOS</BannerTitle>
+        <BannerTitle className="mb-8">PROGRAMAS PRESENCIALES RECOMENDADOS</BannerTitle>
         <FaceToFaceTrainingPlans />
       </div>
       <div className="px-4">
         <FreeClassBanner onClick={openPopup} />
       </div>
       <div>
-        <BannerTitle className='mb-8'>TIENDA</BannerTitle>
+        <BannerTitle className="mb-8">TIENDA</BannerTitle>
         <ShopProducts />
       </div>
       <div>
-        <BannerTitle className='mb-8'>MOMENTOS LASTRAINER</BannerTitle>
+        <BannerTitle className="mb-8">MOMENTOS LASTRAINER</BannerTitle>
         <Moments />
       </div>
-      
+
       <FreeClassPopup isOpen={isPopupOpen} onClose={closePopup} />
     </>
   )

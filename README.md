@@ -110,8 +110,8 @@ Incluye 4 variantes:
 <ImageWithBlurredBackground
   src={product.img}
   alt={product.name}
-  className='w-full h-40'
-  blurIntensity='md'
+  className="w-full h-40"
+  blurIntensity="md"
   showShadow={true}
 />
 ```
@@ -122,21 +122,10 @@ Incluye 4 variantes:
 <ImageWithBlurredBackground
   src={product.img}
   alt={product.name}
-  className='w-full h-40'
-  blurIntensity='xl'
+  className="w-full h-40"
+  blurIntensity="xl"
   overlayOpacity={0.3}
   showShadow={true}
-/>
-```
-
-#### **Opción 3: Variantes Múltiples**
-
-```tsx
-<ProductImage
-  src={product.img}
-  alt={product.name}
-  className='w-full h-40'
-  variant='gradient' // o "blurred", "pattern", "solid"
 />
 ```
 

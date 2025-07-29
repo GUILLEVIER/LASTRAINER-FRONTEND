@@ -10,10 +10,11 @@ export function BannerTitle({ children, className = '' }: BannerTitleProps) {
     <div
       className={`w-full flex justify-center my-8 shadow-lg bg-black dark:bg-white h-full items-center ${className}`}
     >
-      <h2 className='text-3xl md:text-4xl font-extrabold text-center text-primary px-4 py-2 bg-black dark:bg-white'
-       style={{
-        animation: 'var(--animate-shake)'
-      }}
+      <h2
+        className="text-3xl md:text-4xl font-extrabold text-center text-primary px-4 py-2 bg-black dark:bg-white"
+        style={{
+          animation: 'var(--animate-shake)',
+        }}
       >
         {children}
       </h2>

@@ -1,4 +1,5 @@
 export const momentImagesAndVideos = [
+  /*
   {
     title: 'Fittest On Earth Trailer',
     type: 'youtube',
@@ -6,6 +7,7 @@ export const momentImagesAndVideos = [
     embedUrl: 'https://www.youtube.com/embed/OJa4HPVAk3A',
     videoId: 'OJa4HPVAk3A'
   },
+  */
   {
     title: 'Instagram Reel',
     type: 'instagram',
