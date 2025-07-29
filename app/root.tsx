@@ -3,6 +3,7 @@ import type { Route } from './+types/root'
 import './app.css'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
+import { BackgroundPattern } from './components/BackgroundPattern'
 import { ThemeProvider } from './context/ThemeProvider'
 
 export const links: Route.LinksFunction = () => [
@@ -46,6 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider>
+          <BackgroundPattern />
           <Navbar />
           <main className="pt-16">{children}</main>
           <Footer />

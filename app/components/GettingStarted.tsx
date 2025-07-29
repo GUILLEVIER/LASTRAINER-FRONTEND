@@ -50,7 +50,7 @@ export function GettingStarted() {
             className="relative rounded-xl overflow-hidden shadow-lg h-64 w-full flex items-end group cursor-pointer"
             style={{
               backgroundImage: `url(${cardImages[current].img})`,
-              backgroundSize: 'contain',
+              backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
@@ -81,7 +81,7 @@ export function GettingStarted() {
             className="relative rounded-xl overflow-hidden shadow-lg h-64 flex items-end group cursor-pointer transform transition-transform duration-300 hover:scale-105"
             style={{
               backgroundImage: `url(${card.img})`,
-              backgroundSize: 'contain',
+              backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
